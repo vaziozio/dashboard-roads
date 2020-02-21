@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+        <script src="https://unpkg.com/driver.js/dist/driver.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/driver.js/dist/driver.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+        <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <script type="text/javascript" src="{{url_for('static', filename='charts.js')}}"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='scripts.js')}}"></script>
+        <title>Dashboard Apresentação</title>
+    </head>
+    <body>
+        <div class="view-section">
+            <div class="row mt-2 m-1">
+                <div class="col-md-3 card-spaces">
+                    <div id="person1" class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-muted">Top 1 # de pessoas<i class="fas fa-exclamation-triangle float-right"></i> </h4>
+                            <hr>
+                            <h3 class="text-info">{{data['pes_data']['top1_n_pessoas']}}</h3>
+                            <small class="text-muted">Pessoas envolvidas na oc. ID #<strong class="text-warning">{{data['pes_data']['ocorrencia_top1_pessoas']}}</strong></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 card-spaces">
+                    <div id="person2" class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-muted">Total de ocorrências(p) <i class="fab fa-buffer float-right"></i></h4>
+                            <hr>
+                            <h3 class="text-info">{{data['pes_data']['n_oco_pessoas']}}</h3>
+                            <small class="text-muted">Ocorrências com pessoas (Jan/07 a Jun/13).</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 card-spaces">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-muted">Top 1 # de veículos<i class="fas fa-exclamation-triangle float-right"></i> </h4>
+                            <hr>
+                            <h3 class="text-info">{{data['veic_data']['top1_n_veiculos']}}</h3>
+                            <small class="text-muted">Veículos envolvidos na oc. ID #<strong class="text-warning">{{data['veic_data']['ocorrencia_top1_veiculos']}}</strong></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 card-spaces">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-muted"> Total de ocorrências(v)  <i class="fab fa-buffer float-right"></i></h4>
+                            <hr>
+                            <h3 class="text-info">{{data['veic_data']['n_oco_veic']}}</h3>
+                            <small class="text-muted"> Ocorrências com veículos (Jan/07 a Jun/13).</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row m-2" style="height: 70%;">
+                <div class="col-md-6 card-spaces">
+                    <div id="card-person" class="card">
+                        <div class="card-body card-infographic" style="height:550px;">
+                            <h5 class="card-title text-muted">Pessoas por ano</h5>
+                            <small class="text-muted">Gráfico considerando pessoas envolvidas em ocorrências por ano.</small>
+                            <hr>
+                            <div id="person-infographic"></div>
+                            <small class="text-muted">Clique sobre as legendas para filtrar os anos desejados.</small>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 card-spaces">
+                    <div class="card">
+                        <div class="card-body card-infographic" style="height:550px;">
+                            <h5 class="card-title text-muted">Ocorrências por ano</h5>
+                            <small class="text-muted">Gráfico considerando o número total de ocorrências de qualquer tipo<label class="text-danger">(apenas estados com mais de 5000 ocorrências por ano)</label>.</small>
+                            <hr>
+                            <div id="vehicle-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

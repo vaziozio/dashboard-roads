@@ -1,0 +1,26 @@
+html, body {
+        height: 100%;
+        background-color: rgb(248, 249, 250);
+    }
+
+.view-section {
+    height: 100%
+}
+
+.card-infographic {
+  height: 100%;
+}
+
+#person-infographic {
+    height: 80%;
+    width: 100%;
+}
+
+#vehicle-chart {
+    height: 80%;
+    width: 100%;
+}
+
+.card-spaces {
+    padding:5px!important;
+}
