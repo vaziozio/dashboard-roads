@@ -6,7 +6,7 @@ Projeto dashboard com análise dos dados das rodovias federais (Jan/2007-Jun/201
 
 ## Rodando localmente:
 
-1. Instalar as bibliotecas necessárias com `pip install -r requirements.txt` (é necessário tem o pip instalado)
+1. Instalar as bibliotecas necessárias com `pip install -r requirements.txt` (é necessário ter o pip instalado)
 2. Acessar a pasta raiz do projeto via terminal
 3. Rodar o arquivo `app.py` com o comando `python app.py`
 
